@@ -1,0 +1,26 @@
+<RCC>
+    <qresource prefix="/new/prefix1" >
+        <file>icon/imgopen.png</file>
+        <file>icon/imgsb.png</file>
+    </qresource>
+    <qresource prefix="/new/prefix2" >
+        <file>icon/imgdi.png</file>
+        <file>icon/imghdi.png</file>
+        <file>icon/imghpa.png</file>
+        <file>icon/imghsc.png</file>
+        <file>icon/imghst.png</file>
+        <file>icon/imgpa.png</file>
+        <file>icon/imgpi.png</file>
+        <file>icon/imgsc.png</file>
+        <file>icon/imgst.png</file>
+    </qresource>
+    <qresource prefix="/new/prefix3" >
+        <file>icon/zoomin.png</file>
+        <file>icon/zoomout.png</file>
+        <file>icon/resize.png</file>
+    </qresource>
+    <qresource prefix="/new/prefix4" >
+        <file>icon/dataset.png</file>
+        <file>icon/gear.png</file>
+    </qresource>
+</RCC>
