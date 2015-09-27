@@ -16,7 +16,7 @@ class VisualAttribute {
 public:
 	VisualAttribute();
 	VisualAttribute(bool brushFlag);
-	virtual ~VisualAttribute();
+	~VisualAttribute();
 
 	VisualAttribute(const VisualAttribute&);
 

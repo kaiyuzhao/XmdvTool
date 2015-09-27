@@ -23,10 +23,13 @@
 
 OkcVisualMapResult::OkcVisualMapResult() :
 	VisualMapResult() {
-	initBrush();
-	initGlyphPlaceResult();
-	initHierParameters();
-	m_scatterVisAttr = 0;
+		m_scatterVisAttr = 0;
+		diag_VisAttr = 0;
+		inBrushVisAttr = 0;
+		outBrushVisAttr = 0;
+		initBrush();
+		initGlyphPlaceResult();
+		initHierParameters();
 }
 
 OkcVisualMapResult::OkcVisualMapResult(Data* input) :
@@ -44,6 +47,9 @@ OkcVisualMapResult::OkcVisualMapResult(Data* input) :
 
 OkcVisualMapResult::~OkcVisualMapResult() {
 	SAFE_DELETE(m_brush);
+	//SAFE_DELETE(inBrushVisAttr);
+	//SAFE_DELETE(outBrushVisAttr);
+	clearDataVisAttr();
 }
 
 void OkcVisualMapResult::initHierParameters() {
@@ -120,7 +126,11 @@ Brush* OkcVisualMapResult::getBrush() {
 void OkcVisualMapResult::initBrush() {
 	this->m_brushOperator = 0;
 	this->m_brush = 0;
+
+	//SAFE_DELETE(inBrushVisAttr);
 	this->inBrushVisAttr = new VisualAttribute(true);
+
+	//SAFE_DELETE(outBrushVisAttr);
 	this->outBrushVisAttr = new VisualAttribute(false);
 }
 
@@ -137,6 +147,7 @@ void OkcVisualMapResult::initDiagVisAttr() {
 }
 
 void OkcVisualMapResult::setDiagVisAttr(DiagVisAttr* _diag_VisAttr) {
+	SAFE_DELETE(diag_VisAttr);
 	diag_VisAttr = _diag_VisAttr;
 }
 
@@ -210,4 +221,10 @@ void OkcVisualMapResult::setCardinality(std::vector<int> card) {
 
 std::vector<int> OkcVisualMapResult::getCardinality() {
 	return m_cardinality;
+}
+
+void OkcVisualMapResult::clearDataVisAttr(){
+	for(std::vector<VisualAttribute*>::iterator it = data_VisAttr.begin(); it!=data_VisAttr.end(); ++it){
+		SAFE_DELETE(*it);
+	}
 }

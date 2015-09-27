@@ -54,7 +54,6 @@ private:
 	VisualAttribute *inBrushVisAttr;
 	VisualAttribute *outBrushVisAttr;
 
-	//std::vector<std::vector<VisualAttribute*>> diag_VisAttr;
 	DiagVisAttr* diag_VisAttr;
 
 	// The information about glyph placement
@@ -122,7 +121,7 @@ public:
 	void setDataVisAttr(std::vector<VisualAttribute*> data_VisAttr);
 	VisualAttribute* getInBrushVisAttr();
 	VisualAttribute* getOutBrushVisAttr();
-	
+
 	void setDiagMultiDimDataVisAttr(VisualAttribute* VisAttr, int dim, int pos);
 	VisualAttribute* getDiagMultiDimDataVisAttr(int dim, int pos);
 
@@ -144,6 +143,9 @@ public:
 
 	void setCardinality(std::vector<int> card);
 	std::vector<int> getCardinality();
+
+private:
+	void clearDataVisAttr();
 };
 
 #endif /* OKCVISUALMAPRESULT_H_ */

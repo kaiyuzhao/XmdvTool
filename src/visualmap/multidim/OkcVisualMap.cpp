@@ -99,7 +99,7 @@ void OkcVisualMap::doVisualMap() {
 		//	{
 		// Set highlighting and brush boundary
 		okcVMR->setSBBResult(FALSE);
-		setBrush(okcdata, okcVMR);
+		setBrush(okcdata, okcVMR); //okcvm
 
 		// Set cardinality for the visual map result
 		setCardinality(okcVMR);
@@ -210,6 +210,9 @@ void OkcVisualMap::setBrush(OkcData* okcdata, OkcVisualMapResult* okcVMR) {
 	}
 
 	// Set the VisualAttribute and color for each record
+	//clear all attr from okcVMR
+	okcVMR->clearDataVisAttr();
+
 	if (modifier) {
 		// this okcdata has the highlight modifier
 		OkcDataModifierHighlight* modifierHighlight =
