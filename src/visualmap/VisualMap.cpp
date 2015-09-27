@@ -5,7 +5,7 @@
 #include <vector>
 using namespace std;
 
-VisualMap::VisualMap() {
+VisualMap::VisualMap(){
 	this->m_input = 0;
 	this->m_visualMapResult = 0;
 }
@@ -15,8 +15,8 @@ VisualMap::VisualMap(Data* input) {
 	this->m_visualMapResult = 0;
 }
 
-VisualMap::~VisualMap() {
 
+VisualMap::~VisualMap() {
 };
 
 void VisualMap::setPipeline(Pipeline* pipeline) {

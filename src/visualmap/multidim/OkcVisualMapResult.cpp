@@ -46,7 +46,6 @@ OkcVisualMapResult::OkcVisualMapResult(Data* input) :
 		}
 		initBrush();
 		initHierParameters();
-		m_scatterVisAttr = 0;
 }
 
 OkcVisualMapResult::~OkcVisualMapResult() {
