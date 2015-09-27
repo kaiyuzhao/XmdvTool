@@ -10,7 +10,13 @@
 #ifdef WIN32
 #include <windows.h>
 #endif
-#include <GL/glu.h>
+
+#ifdef __APPLE__
+#include <OpenGL/gl.h>
+#else
+#include <GL/gl.h>
+#endif
+
 #include <cassert>
 
 Image::Image(unsigned int w, unsigned int h)

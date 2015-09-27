@@ -852,7 +852,7 @@ template <class T>
 inline IP_Matrix<T>&
 IP_Matrix<T>::setSize( const IP_Matrix<T>& other )
 {
-  size( (len0=other.len0)*(len1=other.len1) );
+  this->size( (len0=other.len0)*(len1=other.len1) );
 
   skip0 = len1;
   skip1 = 1;

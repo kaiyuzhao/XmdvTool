@@ -17,7 +17,12 @@
 #include <sstream>
 #include <vector>
 using namespace std;
-#include <GL/glu.h>
+
+#ifdef __APPLE__
+#include <OpenGL/gl.h>
+#else
+#include <GL/gl.h>
+#endif
 
 #include <vector>
 #include "datatype/Vec2.h"

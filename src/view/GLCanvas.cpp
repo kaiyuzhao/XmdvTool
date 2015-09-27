@@ -1,25 +1,29 @@
 #include "view/GLCanvas.h"
+
 #include <QFontMetrics>
 #include <QString>
 #include <QBitmap>
 #include <QPixmap>
 #include <QPainter>
 #include <QImage>
+#include <QPainter>
+#include <QGLWidget>
+
 #include "datatype/RGBt.h"
 #include "color/ColorManager.h"
-
-#include <QBitmap>
-#include <QPainter>
-#include <QPixmap>
-#include <QImage>
-#include <QGLWidget>
 #include <assert.h>
 
 #include "color/ColorManager.h"
 
+#ifdef __APPLE__
+#include <GLUT/glut.h>
+#else
+#include <GL/glut.h>
+#endif
+
 #define SLICES 2
 #define SLICES2 1
-GLCanvas::GLCanvas(QGLWidget *glWidget = 0) : zoom(1.0,1.0)
+GLCanvas::GLCanvas(QGLWidget *glWidget) : zoom(1.0,1.0)
 {
 	if (glWidget) setGLWidget(glWidget);
 	this->byps = true;
@@ -503,5 +507,3 @@ Vec2 GLCanvas::mapDataToScreen( const Vec2 &p )
 	return Vec2(sc[0],viewport[3]-sc[1]);
 }
 //-----------------------------------------------------------------------------
-
-
