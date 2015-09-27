@@ -42,6 +42,7 @@ OkcVisualMapResult::OkcVisualMapResult(Data* input) :
 		OkcData* okcdata = dynamic_cast<OkcData*>(input);
 		int dataSize = okcdata->getDataSize();
 		if (dataSize>0) {
+				this->clearDataVisAttr();
 				this->data_VisAttr.resize(dataSize);
 		}
 		initBrush();
