@@ -109,6 +109,7 @@ BrushOperator* OkcVisualMapResult::getBrushOperator() {
 }
 
 void OkcVisualMapResult::setBrush(Brush* brush) {
+	SAFE_DELETE(m_brush);
 	m_brush = brush;
 }
 
