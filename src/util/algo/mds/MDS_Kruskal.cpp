@@ -131,14 +131,10 @@ void MDS_Kruskal::initKruskList ()
 			kn.j=j;
 			kn.dissim =Dissim(i,j);
 			kn.disparity =Disparity(i,j);
-
-			//*(krusk.v)=kn;
-			//krusk.v++;
 			krusk[index]=kn;
 			index++;
 		}
 	}
-	//cout<<krusk<<endl;
 }
 
 /*
@@ -148,39 +144,7 @@ void MDS_Kruskal::initKruskList ()
 void MDS_Kruskal::nonmetric ()
 {
 	krusk.bubble_sort();			//ascending order
-	//krusk.merge_sort();
-
-	//cout<<setprecision(20);
-	//cout<<"sortee"<<endl<<krusk<<endl;
 	krusk.sort_disparity();
-
-	/*
-	int num=0;
-
-	List_Object<Kruskal_node> *p, *p_right;
-	int flag=1;
-	while (flag) {
-		flag=0;
-		p=krusk.p_left_end ();
-		while (p && p->right ) {
-		//for (int i=0; i<krusk.count()-1; i++) {
-			p_right=p->right ;
-			if (p->element.disparity>p_right->element.disparity) {
-				flag=1;
-				double avg=(p->element.disparity+p_right->element.disparity)/2.0;
-				p->element.disparity=avg;
-				p_right->element.disparity=avg;
-			}
-			p=p->right;
-		}
-
-		num++;
-		//cout<<"num="<<num<<endl;
-
-		if (num==krusk.count()-1)break;
-		//cout<<krusk<<endl;
-	}
-	*/
 }
 
 
@@ -196,37 +160,16 @@ void MDS_Kruskal::fromKruskList ()
 void MDS_Kruskal::metric ()
 {
 	MDS_Matrix X(len0, len1);	//temperal variant for Xik
-
-	//cout<<"Disparity:"<<endl<<Disparity<<endl;
-	//cout<<"Dij:"<<endl<<Dij<<endl;
-
-
 	MDS_Matrix Div=Disparity/Dij;
-
-	//cout<<"Div:"<<endl<<Div<<endl;
-
-	//cout<<"Xik:"<<endl<<Xik<<endl;
-
 	for (int i=0; i<len0; i++) {
 		for (int k=0; k<len1; k++) {
 			MDS_Vector row_i=1.0-Div.row(i);
 			MDS_Vector col_k=Xik(i,k)-Xik.col(k);
 			X(i,k)=Xik(i,k)-row_i*col_k/len0;
-
-			//cout<<"row_i:"<<endl<<row_i<<endl;
-			//cout<<"col_k:"<<endl<<col_k<<endl;
-			//cout<<"innerproduct:"<<row_i*col_k<<endl;
 		}
 	}
-
-	//update the coordinate estimates and distance matrix
-	//cout<<"Xik:"<<endl<<Xik<<endl;
 	Xik=X;
-	//cout<<"Xik:"<<endl<<Xik<<endl;
-
 	Dij=Xik.row_p2sqr_dist();
-	//cout<<"Dij:"<<endl<<Dij<<endl;
-
 }
 
 

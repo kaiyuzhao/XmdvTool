@@ -77,15 +77,6 @@ public:
 	// this function can find the actual line no in the original data
 	int getOrigLine(int line);
 
-	// gets the combined distance for the given line
-	// does not reorder, so you must call getOrigLine before this func
-/*
-	double getComDist(int line);
-	double getComDistMin();
-	double getComDistMax();
-	double getComDistBrushLevel();
-*/
-
 	// overloading the operator "="
 	void copyFrom(const OkcDataModifierManager* copy);
 	void operator=(const OkcDataModifierManager& copy);

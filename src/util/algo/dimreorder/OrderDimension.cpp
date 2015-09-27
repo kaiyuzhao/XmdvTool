@@ -880,40 +880,6 @@ double OrderDimension::isolated_ratio(std::vector<Vec2> DimStckData, int set_siz
 	double ratio = 0;
 
 	double A_X, A_Y;
-/*	std::vector<bool> flag(set_size);
-	for ( i = 0; i < set_size; i++ )
-		flag[i] = false;
-	// get the data points' positions
-	for( i = 0; i < set_size - 1 ; i++ )
-	{
-		for ( j = i + 1; j < set_size; j++ )
-		{
-			A_X = DimStckData[i].X;
-			A_Y = DimStckData[i].Y;
-			B_X = DimStckData[j].X;
-			B_Y = DimStckData[j].Y;
-			temp1 = fabs(A_X - B_X);
-			temp2 = fabs(A_Y - B_Y);
-
-			// temp1 and temp2 are the x and y difference of the two bin, they should not be both 0
-			if (temp1 <= 1.1*g_globals.screen_distortion->dimstack_X_blocksize )
-				if ( temp2 <= 1.1*g_globals.screen_distortion->dimstack_Y_blocksize )
-					  if ((temp1 + temp2) > 0) // meaning they are not mapped to the same bin
-
-			{
-				if (flag[i] == false && flag[j] == false)
-					group ++;
-				flag[i] = true;
-				flag[j] = true;
-			}
-		}
-	}
-	for ( i = 0 ; i < set_size; i++ )
-	{
-		if (flag[i] == false)
-			isolated ++;
-	}
-*/
 	// number of bins on X and Y direction
 	int X_bin, Y_bin;
 	X_bin = Y_bin = 1;

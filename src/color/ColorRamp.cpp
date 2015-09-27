@@ -135,7 +135,7 @@ void ColorRamp::operator = (const ColorRamp& ramp)
 
 	int i;
 	for (i=0; i<4; ++i) {
-		for (PointListIter iter=m_userPoints[i].begin(); 
+		for (PointListIter iter=m_userPoints[i].begin();
 				iter != m_userPoints[i].end(); ++iter)
 		{
 			RampPoint *pt = *iter;
@@ -161,7 +161,7 @@ void ColorRamp::operator = (const ColorRamp& ramp)
 ColorRamp::~ColorRamp(void)
 {
 	for (int i=0; i<4; ++i) {
-		for (PointListIter iter=m_userPoints[i].begin(); 
+		for (PointListIter iter=m_userPoints[i].begin();
 				iter != m_userPoints[i].end(); ++iter)
 		{
 			RampPoint *pt = *iter;
@@ -178,7 +178,7 @@ ColorRamp::~ColorRamp(void)
 //-----------------------------------------------------------------------------
 void ColorRamp::initialize(unsigned int N /*= 0*/, float list[][5] /*= NULL*/)
 {
-	if (N == 0) 
+	if (N == 0)
 	{
 		for (int i=0; i<4; i++)
 		{
@@ -202,8 +202,8 @@ void ColorRamp::initialize(unsigned int N /*= 0*/, float list[][5] /*= NULL*/)
 			userpoint->tangent.y1 = (float)m_maxndx;
 			m_userPoints[i].push_back(userpoint);
 		}
-	} 
-	else 
+	}
+	else
 	{
 		for (unsigned int i=0; i<N; i++)
 		{
@@ -241,7 +241,7 @@ void ColorRamp::initialize(unsigned int N /*= 0*/, float list[][5] /*= NULL*/)
 		}
 	}
 
-	for (int cmpnt=0; cmpnt < 4; ++cmpnt) 
+	for (int cmpnt=0; cmpnt < 4; ++cmpnt)
 	{
 		for (PointListIter iter=m_userPoints[cmpnt].begin()+1;
 				iter != m_userPoints[cmpnt].end(); ++iter)
@@ -355,14 +355,9 @@ int ColorRamp::insertPoint(float, float, int ndx, int cmpnt,
 		coeff[2] = userpoint->polynom[2];
 		slope = coeff[0];
 		for (i=1; i<3; i++) {
-			slope *= (float) ndx;	
+			slope *= (float) ndx;
 			slope += coeff[i];
 		}
-		/*
-		Recall :
-		cos( arctg(x) ) = 1/sqr( 1 + x^2 );
-		sin( arctg(x) ) = |x|/sqr( 1 + x^2 );
-		 */
 		dx = (float) (25. / sqrt( slope*slope + 1. ));
 		dy = dx*slope;
 	}
@@ -582,7 +577,7 @@ void ColorRamp::getPolynomial(RampFunction mode,
 	case POLYNOMIAL:
 		/*
 			we want a polynom P(x) = Ax^3 + Bx^2 + Cx + D
-			so that : P(a0) = b0, P'(a0) = t0, P(a1) = b1, P'(a1) = t1 
+			so that : P(a0) = b0, P'(a0) = t0, P(a1) = b1, P'(a1) = t1
 			i.e.
 
 			| a0^3		a0^2	a0	1 | |A|	  |b0|

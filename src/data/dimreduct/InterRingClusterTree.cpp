@@ -120,16 +120,6 @@ InterRingCluster* InterRingClusterTree::findNodeAccordingLevelAndAngle(int level
 	return root->findNodeAccordingLevelAndAngle(level, angle, mini_angle/2, start, end, in);
 }
 
-/*
-void InterRingClusterTree::resetCurrentList()
-{
-	if ( current_list != NULL )
-		delete current_list;
-
-	current_list = new CLinkList();
-	root->ResetCurrentList(current_list);
-}
-*/
 void InterRingClusterTree::resetSelection()
 {
 }
@@ -180,4 +170,3 @@ double InterRingClusterTree::getDistance(InterRingCluster *node_1, InterRingClus
 //    double distance = ((double)dis)/(max_level-1);
     return distance;
 }
-

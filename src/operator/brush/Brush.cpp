@@ -52,18 +52,6 @@ void Brush::Init(OkcData* dataset)
 	}
 }
 
-/*void Brush::MapVisualBrush(){
-	DisplayMax.resize(dataMapResult->getNumVisibleCols());
-	DisplayMin.resize(dataMapResult->getNumVisibleCols());
-	DisplayRampMax.resize(dataMapResult->getNumVisibleCols());
-	DisplayRampMin.resize(dataMapResult->getNumVisibleCols());
-
-	dataMapResult->MapData(max, DisplayMax);
-	dataMapResult->MapData(min, DisplayMin);
-	dataMapResult->MapData(ramp_max, DisplayRampMax);
-	dataMapResult->MapData(ramp_min, DisplayRampMin);
-}*/
-
 void Brush::SetTriple(int d, double _pos, double _size, double _offset)
 {
 	pos[d] = _pos;
@@ -86,87 +74,6 @@ double Brush::Max(int d)
 {
     return pos[d] + size[d]*.5;
 }
-
-//
-// Automatic global brush resizing
-//
-/*
-
-void Brush::Resize(double factor)
-{
-	std::vector<double> dim_min, dim_max;
-	m_inputDataset->getDimMinArr(dim_min);
-	m_inputDataset->getDimMaxArr(dim_max);
-   if (factor == 0) {
-        // Resize to max
-        for (int d=0; d<m_inputDataset->getDimSize(); d++)
-		{
-			SetPosSize(d, (dim_max[d] + dim_min[d]) / 2.0,
-					dim_max[d] - dim_min[d]);
-        }
-    }
-	else
-	{
-        for (int d=0; d<m_inputDataset->getDimSize(); d++)
-		{
-            size[d] *= factor;
-            SetSize(d, size[d] * factor);
-
-			double lmin, lmax;
-			lmin = Min(d);
-			lmax = Max(d);
-			if (lmin < dim_min[d] || lmax > dim_max[d]) {
-				lmin = MAX(lmin, dim_min[d] );
-				lmax = MIN(lmax, dim_max[d]);
-				SetMinMax(d, lmin, lmax);
-			}
-        }
-    }
-}
-
-*/
-/*
- * //commented by Zaixian because now
- * we do not need order_from and order_to
-	int columns, rows;
-	columns = m_inputDataset->d2_width;
-	rows = m_inputDataset->data_size/columns+1;
-    if (factor == 0) {
-        // Resize to max
-		order_from = 0;
-		order_to = m_inputDataset->data_size-1;
-		x_from= 0;
-		x_to= columns-1;
-		y_from= 0;
-		y_to= rows-1;
-    } else {
-		double lsize, lpos;
-		int tmp;
-		lsize = order_to - order_from;
-		lpos = (order_to + order_from)/2.0;
-		lsize *= factor;
-		tmp = (int)(lpos - lsize/2.0 + 0.5);
-		order_from = MAX(tmp, 0);
-		tmp = (int)(lpos + lsize/2.0 + 0.5);
-		order_to = MIN(tmp, m_inputDataset->data_size-1);
-
-		lsize = x_to - x_from;
-		lpos = (x_to + x_from)/2.0;
-		lsize *= factor;
-		tmp = (int)(lpos - lsize/2.0 + 0.5);
-		x_from = MAX(tmp, 0);
-		tmp = (int)(lpos + lsize/2.0 + 0.5);
-		x_to = MIN2(tmp, columns-1);
-
-		lsize = y_to - y_from;
-		lpos = (y_to + y_from)/2.0;
-		lsize *= factor;
-		tmp = (int)(lpos - lsize/2.0 + 0.5);
-		y_from = MAX(tmp, 0);
-		tmp = (int)(lpos + lsize/2.0 + 0.5);
-		y_to = MIN(tmp, rows-1);
-    }
-*/
 
 // PAUL
 // When you set Pos, Size, ...

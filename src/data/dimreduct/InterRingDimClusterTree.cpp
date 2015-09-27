@@ -180,16 +180,5 @@ void InterRingDimClusterTree::resetNames()
 
 void InterRingDimClusterTree::resetSelection()
 {
-//    if ( g_globals.dim_reducer != NULL )
-//    {
-//        g_globals.dim_reducer->SetStatus("normal");
-//        g_globals.dim_reducer->ResetRepresentativeDimList();
-//    }
+  
 }
-
-/*
-void InterRingDimClusterTree::PCA()
-{
-	((InterRingDimCluster *)root)->PCA();
-}
-*/

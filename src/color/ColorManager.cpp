@@ -51,12 +51,6 @@ void ColorManager::initColors() {
 	m_colorMaps[GRID1] = new ColorMap(new ColorRamp(0x000000));
 	m_colorMaps[GRID2] = new ColorMap(new ColorRamp(0xB4B4B4));
 	m_colorMaps[GRID3] = new ColorMap(new ColorRamp(0xDCDCDC));
-/*
- * old initial schema for grid
-	m_colorMaps[GRID1] = new ColorMap(new ColorRamp(0xFF0F0F));
-	m_colorMaps[GRID2] = new ColorMap(new ColorRamp(0x0FFF0F));
-	m_colorMaps[GRID3] = new ColorMap(new ColorRamp(0x0F0FFF));
-*/
 	m_colorMaps[BRUSH_BG1] = new ColorMap(new ColorRamp(0xFBB3AD));
 	m_colorMaps[BRUSH_SELECTED1] = new ColorMap(new ColorRamp(0xFF2010), 0, ColorRamp::RAMP_SINGLE | ColorRamp::RAMP_SEQ | ColorRamp::RAMP_DIV | ColorRamp::RAMP_QUAL);
 	m_colorMaps[PIXEL_HIGHLIGHT] = new ColorMap(new ColorRamp(0x000000));
@@ -118,25 +112,6 @@ void ColorManager::createNames() {
 	m_themeNames[NOCTURNAL] = "Nocturnal";
 }
 
-/**
- * Template:
-   case : {
-		float ramp[][5] = {
-				{ , , , , 255 },
-				{ , , , , 255 },
-				{ , , , , 255 },
-				{ , , , , 255 },
-				{ , , , , 255 },
-				{ , , , , 255 },
-				{ , , , , 255 },
-				{ , , , , 255 },
-				{ , , , , 255 },
-				{ , , , , 255 },
-				{ , , , , 255 },
-		};
-		return new ColorRamp(, ramp, , ColorRamp::RAMP_);
-	}
- */
 ColorRamp* ColorManager::getPredefinedColorRamp(int mapName) {
 	switch(mapName) {
 	case SEQ_ORANGES: {

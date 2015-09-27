@@ -315,23 +315,13 @@ void XmdvToolMainWnd::initHelpActions(){
 }
 
 void XmdvToolMainWnd::about()
- {
+{
      QMessageBox::about(this, tr("About XmvTool"),
                         tr("XmdvTool is a public-domain software package for the interactive visual exploration of\n"
                            "multivariate data sets.  For more information, please visit:\n"
                            "http://davis.wpi.edu/~xmdv"));
- }
+}
 
-/*
-void XmdvToolMainWnd::aboutQt()
- {
-     QMessageBox::about(this, tr("About QT"),
-                        tr("This example demonstrates how to use\n"
-                           "Qt Assistant as help system for your\n"
-                           "own application."));
- }
-
-*/
 void XmdvToolMainWnd::showHelp()
  {
      assistant->showHelp("help/index.html");

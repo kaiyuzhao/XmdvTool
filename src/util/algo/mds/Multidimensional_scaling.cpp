@@ -59,9 +59,3 @@ bool multidimensional_scaling(int n,
 	return true;
 
 }
-
-/*
-#ifdef __cplusplus
-}
-#endif
-*/

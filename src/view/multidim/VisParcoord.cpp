@@ -250,10 +250,6 @@ void VisParcoord::drawParcoordAxesNameMinMax()
     	Vec2 pos;
     	//this is the position to draw dimension names and maximum values
     	pos = m_canvas->mapDataToScreen(Vec2(x,0.0));
-
-       /* m_canvas->drawString((int)pos.X
-        		, (int)(pos.Y-2.0*g_globals.textFont.pointSize()), m_dim_names[i]);*/
-
         sprintf(sTemp, "%g", m_dim_max[i]);
         m_canvas->drawString((int)pos.X,
         		(int)(pos.Y-0.5*g_globals.textFont.pointSize()), sTemp);
@@ -440,26 +436,18 @@ void VisParcoord::inputMouseMotion(int x, int y)
 	static int prev_sx, prev_sy;
 	switch (m_input_mode) {
 	case CANVAS_PAN:
-		//appCanvasMousePan(canvas);
 		return;
 
 	case RESIZE_RAMP:
-		/*if (xor_needs_undo)
-			InputParcoordBoundRampResize(canvas, prev_sx, prev_sy);
-		InputParcoordBoundRampResize(canvas, x, y);*/
 		break;
 
 	case RESIZE_BRUSH_TOP:
 	case RESIZE_BRUSH_BOTTOM:
-		//if (xor_needs_undo)
-		//	InputParcoordResizeBrush(canvas, prev_sx, prev_sy);
 		setCursorShape(Qt::SizeVerCursor);
 		inputParcoordResizeBrush(m_canvas, x, y);
 		break;
 
 	case TRANSLATE_BRUSH:
-		/*if (xor_needs_undo)
-			InputParcoordMoveBrush(canvas, prev_sx, prev_sy);*/
 		setCursorShape(Qt::SizeVerCursor);
 		inputParcoordMoveBrush(m_canvas, x, y);
 		break;

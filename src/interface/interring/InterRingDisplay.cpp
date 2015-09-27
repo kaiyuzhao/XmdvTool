@@ -81,17 +81,6 @@ void InterRingDisplay::drawInterRing() {
 
 	//draw cluster outlines of interRing;
 	traceDrawClusterOutlines(m_dimTree->root);
-
-	/*
-	 * This is used to render distorted interring.
-	 * We do not need this feature now.  It can be added
-	 * later by future developers
-    DrawVisualFeedbacks();
-
-    if ( circular_distortion_feedback )
-        TraceDrawDistortedFrame(tree->root);
-        */
-
     //draw names for selected clusters
     if ( m_dimReductDlg->m_show_selected_name )
         traceDrawClusterNames(m_dimTree->root);
@@ -320,4 +309,3 @@ void InterRingDisplay::getLevelAndAngleAccordingXY(double x, double y, int &leve
 
 	return;
 }
-

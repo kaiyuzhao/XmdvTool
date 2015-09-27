@@ -64,12 +64,6 @@ void HistogramModifier::copyFrom(const HistogramModifier* copy) {
 		this->max_frequency[i] = copy->max_frequency[i];
 	}
 
-	/*for (int i = 0; i < dimSize; i++) {
-		for (int j = 0; j < histogram_size; j++) {
-			printf("frequency[%d][%d]=%d\n", i, j, frequency[i][j]);
-		}
-	}*/
-
 }
 
 void HistogramModifier::operator=(const HistogramModifier &copy) {

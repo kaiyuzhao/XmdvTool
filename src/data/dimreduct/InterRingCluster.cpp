@@ -83,20 +83,6 @@ void InterRingCluster::resetEntries()
 		siblings->resetEntries();
 }
 
-/*
-void InterRingCluster::resetCurrentList(LinkList* current_list)
-{
-	if ( current )
-		current_list->AddNodeAtEnd(this);
-
-	if ( siblings != NULL )
-		siblings->resetCurrentList(current_list);
-
-	if ( children != NULL )
-		children->resetCurrentList(current_list);
-}
-*/
-
 //reset the start_angle of this node;
 //start_angle: the new start angle to be assigned to this node; unit_angle: angle responds to one dimension;
 void InterRingCluster::resetAngles(double start_angle, double unit_angle)
@@ -129,23 +115,6 @@ double InterRingCluster::getMidAngle()
 		angle = angle - 360;
 	return angle;
 }
-
-/*
-//reset color of this node; color responds to its mid angle.
-void InterRingCluster::ResetColors(colormap CMAP)
-{
-	double mid_angle = GetMidAngle();
-	double color_idx_test_punit = mid_angle * COLORCOEF;
-    int color_idx = (int) color_idx_test_punit;
-	color = CMAP[color_idx];
-
-	if ( children != NULL )
-		children->ResetColors(CMAP);
-	if ( siblings != NULL )
-		siblings->ResetColors(CMAP);
-}
-*/
-
 
 void InterRingCluster::resetColors()
 {
@@ -892,5 +861,3 @@ bool InterRingCluster::reorder()
 */
     return true;
 }
-
-

@@ -106,11 +106,7 @@ void SortRowsOnAllDimOperator::SortAllDim(){
 			this->sortOrderOnAllDim[dim+1][i] = sortArray[i].number;
 		}
 	}
-	/*for (i = 0; i < data_size; i++) {
-		this->sortOrderOnAllDim[dimSize][i] = i;
-	}*/
 	delete sortArray;
-
 }
 
 void SortRowsOnAllDimOperator::initRequiredArr(){
@@ -119,20 +115,6 @@ void SortRowsOnAllDimOperator::initRequiredArr(){
 
 	int dataSize = okcdata->getDataSize();
 	int dimSize = okcdata->getDimSize();
-
-	/*if(this->sortOrderOnAllDim.size()>0){
-		for (int i = 0; i < dimSize + 1; i++) {
-			sortOrderOnAllDim[i].resize(0);
-		}
-	}
-
-	this->sortOrderOnAllDim.resize(0);
-
-	this->sortOrderOnAllDim.resize(dimSize + 1);
-
-	for (int i = 0; i < dimSize + 1; i++) {
-		sortOrderOnAllDim[i].resize(dataSize);
-	}*/
 
 	VectorUtil::init2DVector(sortOrderOnAllDim, dimSize + 1, dataSize);
 }
