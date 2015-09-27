@@ -147,13 +147,4 @@ void DimOOOMap::reorderDimension(int rowID, DimOOOMap::DIRECTION direction)
 	map_in_to_out[dimNewPos] = rowID;
 	map_in_to_out[neighborNewPos] = neighbor;
 
-/*
-	temp_bool = on[dimNewPos];
-	bool temp_bool2 = on[neighborNewPos];
-	//on[dimNewPos] = on[neighborNewPos];
-	on[dimNewPos] = temp_bool2;
-	on[neighborNewPos] = temp_bool;
-*/
-
 }
-

@@ -60,12 +60,6 @@ void TreeContour::cfNavInit(ClusterTree* btree, HierDisplayInformation* hier_inf
 		this->tree_color,
 		this->contour_radius);
 
-		//Printing for debugging purposes.
-		/*for(int i = 0;i<Cthis->contour_radius.size();i++)
-		{
-				debugArr(Cthis->tree_contour[i]);
-				std::cout<<std::endl;
-		}*/
 		//This finds the tree height and stores it in heir info
 		hier_info->tree_height = FindTreeHeight();
 
@@ -267,4 +261,3 @@ double TreeContour::FindRootRadius()
 {
 	return(m_btree->nodes[0].sqrt_radius);
 }
-

@@ -204,14 +204,6 @@ public:
 
 	void getCardinality(std::vector<int> &buf);
 
-	// gets the combined distance, a derived dimension for pixel display
-/*
-	double getComDist(int line);
-	double getComDistMin();
-	double getComDistMax();
-	double getComDistBrushLevel();
-*/
-
 	// return true if the data_buf in this OkcData
 	// is created from scratch instead of from another class
 	bool isBaseOkcData();

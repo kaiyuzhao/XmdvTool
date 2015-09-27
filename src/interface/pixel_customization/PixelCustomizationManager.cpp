@@ -32,16 +32,7 @@ PixelCustomization *PixelCustomizationManager::getDialog(){
 
 	//int pID = activeWindow->getPipelineID();
 	PixelCustomization *dialog = 0;
-
-	//a dialog has already been created for this pipeline.
-	/*
-	if (dialogs.count(pID)) {
-		//the dialog already exists
-		dialog = dialogs[pID];
-	}
-	//the dialog does not yet exist, make a new one
-	else {
-	 */
+	
 	QMdiSubWindow *window = viewManager->getMdiArea()->activeSubWindow();
 	dialog = new PixelCustomization(mainWnd, window, getSettings());
 	//		dialogs[pID] = dialog;

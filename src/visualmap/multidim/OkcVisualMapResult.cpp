@@ -100,15 +100,6 @@ std::vector<double> OkcVisualMapResult::getDimMaxArr() {
 	return buf;
 }
 
-/*
-std::vector<int> OkcVisualMapResult::getDimCardinalityArr() {
-	std::vector<int> buf;
-	OkcData *okcdata = dynamic_cast<OkcData *>(getData());
-	okcdata->getCardinality(buf);
-	return buf;
-}
-*/
-
 void OkcVisualMapResult::setBrushOperator(BrushOperator* brushOperator) {
 	this->m_brushOperator = brushOperator;
 }

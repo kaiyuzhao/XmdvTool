@@ -241,16 +241,6 @@ void Pipeline::updateAssisInput(Data* output, XmdvTool::ASSISDATATYPE type) {
 		// index is the location the assistant transformation
 		int index = it-itBegin;
 		m_assisTransformations[index]->updateAssisInput(output);
-		// If this is an OkcData, we will use it to update the input of the assistant transformation.
-		// Currently, all the input of the assistant transformation is OkcData.  In the future,
-		// if other data type becomes the input of one assistant transformation, we need add more code here.
-/*
-		if ( typeid(*updatedInput)==typeid(OkcData) ) {
-			OkcData* input = dynamic_cast<OkcData*>( m_assisInputData[index] );
-			OkcData* upatedOkcData  = dynamic_cast<OkcData*>( updatedInput );
-			(*input) = (*upatedOkcData);
-		}
-*/
 	}
 }
 

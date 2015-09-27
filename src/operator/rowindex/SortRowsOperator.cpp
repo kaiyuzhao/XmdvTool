@@ -96,20 +96,6 @@ XmdvTool::SORTORDER SortRowsOperator::getSortOrder() {
 }
 
 void SortRowsOperator::sortRows(OkcData* dataset, OkcDataModifierRowIndex* rowIndex) {
-/*
-	switch (m_sortWay) {
-	case XmdvTool::OKCDIM_ORIGINAL :
-		sortByDim(dataset, rowIndex, m_sortDimNo);
-		break;
-	case XmdvTool::OKCDIM_COMDIST :
-		//m_sortDim==OKCDIM_COMDIST means that we will sort by one derived dimension
-		//m_sortDimNo will always be -1, assuming this is called by pixel display only
-		sortByDim(dataset, rowIndex, m_sortDimNo);
-		break;
-	default:
-		break;
-	}
-*/
 	//If m_sortDim==OKCDIM_ORIGINAL, we will sort by one dimension.
 	//If m_sortDim==OKCDIM_COMDIST,  we will sort by one derived dimension and m_sortDimNo will always be -1
 	sortByDim(dataset, rowIndex, m_sortDimNo);
@@ -171,4 +157,3 @@ int SortRowsOperator::decreaseSort ( const void *elm1, const void *elm2)
 	else
 		return -1;
 }
-

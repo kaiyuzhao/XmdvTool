@@ -440,13 +440,6 @@ IP_Vector<T>::elementPtr( int i ) const
 	return (this->v)+seek(i);
 }
 
-/*
-template <class T>
-inline T
-IP_Vector<T>::ele( int i )
-{  return (this->v)[seek(i)]; }
-*/
-
 template <class T>
 inline T&
 IP_Vector<T>::element( int i )
@@ -992,26 +985,6 @@ inline IP_Vector<T>::prod( const IP_Vector<T>& v1, const IP_Vector<T>& v2 ) cons
   return result;
 }
 
-// =====================================================================
-/*
-template <class T>
-inline IP_Vector<T>
-IP_Vector<T>::operator* ( const IP_Matrix<T>& m ) const
-
-{
-
-  IP_Vector<T> 			result( m.len1 );
-  IP_Matrix<T>::VectorIterator	col(m,0);
-
-  for( col.first(); col.valid(); col.next() )
-    result(col.index()) = *col * *this;
-
-  return result;
-}
-*/
-
-// =====================================================================
-
 template <class T>
 inline IP_Matrix<T>
 IP_Vector<T>::dotTranspose( const IP_Vector<T>& other ) const
@@ -1192,7 +1165,6 @@ IP_Vector<T>::pow( int exponent )
 
   while( tl-- )
   {
-    //*tv *= (T) ::pow( *tv, (CMPLX_FLOAT_TYPE)exponent );
     *tv *= (T) ::pow( *tv, exponent );
     tv += ts;
   }
@@ -1748,14 +1720,8 @@ inline int IP_Vector<T>::argMinAbs() const
       }
     tv -= ts;
   }
-
   return result;
 }
-
-/*/ =====================================================================\
-// thresholding
-// =====================================================================\
-*/
 
 template <class T>
 inline IP_Vector<T>&
