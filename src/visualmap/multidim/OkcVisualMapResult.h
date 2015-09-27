@@ -121,10 +121,8 @@ public:
 	std::vector<VisualAttribute*> getDataVisAttr();
 	void setDataVisAttr(std::vector<VisualAttribute*> data_VisAttr);
 	VisualAttribute* getInBrushVisAttr();
-	void setInBrushVisAttr(VisualAttribute* inBrushVisAttr);
 	VisualAttribute* getOutBrushVisAttr();
-	void setOutBrushVisAttr(VisualAttribute* outBrushVisAttr);
-
+	
 	void setDiagMultiDimDataVisAttr(VisualAttribute* VisAttr, int dim, int pos);
 	VisualAttribute* getDiagMultiDimDataVisAttr(int dim, int pos);
 

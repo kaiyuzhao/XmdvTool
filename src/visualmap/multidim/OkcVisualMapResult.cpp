@@ -164,24 +164,12 @@ void OkcVisualMapResult::setScatterVisAttr(ScatterVisAttr* scatterVisAttr) {
 	m_scatterVisAttr = scatterVisAttr;
 }
 
-void OkcVisualMapResult::setDataVisAttr(std::vector<VisualAttribute*> data_VisAttr) {
-	this->data_VisAttr = data_VisAttr;
-}
-
 VisualAttribute* OkcVisualMapResult::getInBrushVisAttr() {
 	return this->inBrushVisAttr;
 }
 
-void OkcVisualMapResult::setInBrushVisAttr(VisualAttribute* inBrushVisAttr) {
-	this->inBrushVisAttr = inBrushVisAttr;
-}
-
 VisualAttribute* OkcVisualMapResult::getOutBrushVisAttr() {
 	return this->outBrushVisAttr;
-}
-
-void OkcVisualMapResult::setOutBrushVisAttr(VisualAttribute* outBrushVisAttr) {
-	this->outBrushVisAttr = outBrushVisAttr;
 }
 
 void OkcVisualMapResult::setDiagMultiDimDataVisAttr(VisualAttribute* VisAttr, int dim, int pos) {
