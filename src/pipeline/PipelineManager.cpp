@@ -46,6 +46,7 @@ using namespace std;
 
 PipelineManager::PipelineManager(XmdvToolMainWnd* wnd)
 {
+	scatterVisAttr = 0;
 	this->setMainWnd(wnd);
 	m_pipelines.clear();
 	m_visualMapResults.clear();
@@ -293,7 +294,8 @@ void PipelineManager::openFile(QString fileName, bool needRefresh, XmdvTool::VIS
 	//glyphPlace->setGlyphPlaceMode(XmdvTool::GLYPHPLACE_ORDERED);
 	newVisualMap->setGlyphPlace(glyphPlace);
 
-	ScatterVisAttr* scatterVisAttr = new ScatterVisAttr();
+	SAFE_DELETE(scatterVisAttr);
+	scatterVisAttr = new ScatterVisAttr();
 	newVisualMap->setScatterVisAttr(scatterVisAttr);
 
 	// use QFileInfo to remove dir name from the file name
@@ -427,7 +429,8 @@ int PipelineManager::createSBBPipeline(OkcData* origData) {
 	newVisualMap->setGlyphPlace(glyphPlace);
 	newVisualMap->setGlyphShape(XmdvTool::GLYPHSHAPE_STAR);
 
-	ScatterVisAttr* scatterVisAttr = new ScatterVisAttr();
+	SAFE_DELETE(scatterVisAttr);
+	scatterVisAttr = new ScatterVisAttr();
 	newVisualMap->setScatterVisAttr(scatterVisAttr);
 
 	return pipelineID;
@@ -560,7 +563,8 @@ int PipelineManager::createDimRPipeline(OkcData* origData) {
 	GlyphPlace* glyphPlace = new GlyphPlace();
 	newVisualMap->setGlyphPlace(glyphPlace);
 	// Add the ScatterVisAttr object for this pipeline
-	ScatterVisAttr* scatterVisAttr = new ScatterVisAttr();
+	SAFE_DELETE(scatterVisAttr);
+	scatterVisAttr = new ScatterVisAttr();
 	newVisualMap->setScatterVisAttr(scatterVisAttr);
 
 	return pipelineID;
@@ -778,5 +782,3 @@ void PipelineManager::addAssisInputData(Data* data) {
 		m_allAssisInputData.push_back(data);
 	}
 }
-
-

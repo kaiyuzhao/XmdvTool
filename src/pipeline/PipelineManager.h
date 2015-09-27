@@ -22,6 +22,7 @@ class Operator;
 class Data;
 class ViewManager;
 class Transformation;
+class ScatterVisAttr;
 
 class PipelineManager {
 	friend class ViewManager;
@@ -153,6 +154,10 @@ public:
 
 	// add a data to m_allAssisInputData
 	void addAssisInputData(Data* data);
+
+	// for memory clean up;
+private:
+	ScatterVisAttr* scatterVisAttr;
 };
 
 #endif /*PIPELINEMANAGER_H_*/

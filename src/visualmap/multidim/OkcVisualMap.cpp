@@ -42,7 +42,6 @@ OkcVisualMap::OkcVisualMap(){
 }
 
 OkcVisualMap::~OkcVisualMap() {
-	this->clear();
 }
 
 void OkcVisualMap::setInput(Data* input) {
@@ -295,12 +294,4 @@ void OkcVisualMap::placeGlyph(OkcData* okcdata, OkcVisualMapResult* okcVMR)
 	m_glyphPlace->setOkcData(okcdata);
 	m_glyphPlace->placeGlyph();
 	okcVMR->setGlyphPlaceResult(m_glyphPlace->getPlaceResult());
-}
-
-void OkcVisualMap::clear(){
-	for(std::vector<OkcVisualMapResult*>::iterator it=m_okcVmr.begin();
-		it!= m_okcVmr.end(); ++it){
-		SAFE_DELETE(*it);
-	}
-	m_okcVmr.clear();
 }
