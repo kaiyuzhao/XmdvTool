@@ -148,11 +148,11 @@ void OkcVisualMap::doVisualMap() {
 
 void OkcVisualMap::setDiagPlotColor(OkcData* okcdata, OkcVisualMapResult* okcVMR) {
 	DiagVisAttr* diag_VisAttr = new DiagVisAttr();
+	//need to clear inside setDiagVisAttr
 	okcVMR->setDiagVisAttr(diag_VisAttr);
 	diag_VisAttr->setOkcData(okcdata);
 	diag_VisAttr->setOkcVisualMapResult(okcVMR);
 	diag_VisAttr->diagColorMapping();
-
 }
 
 void OkcVisualMap::setBrush(OkcData* okcdata, OkcVisualMapResult* okcVMR) {
@@ -171,8 +171,10 @@ void OkcVisualMap::setBrush(OkcData* okcdata, OkcVisualMapResult* okcVMR) {
 			OkcData* brushStorage = dynamic_cast<OkcData*>(getAssisInput(i));
 			std::vector<double> buf;
 			brushStorage->getData(buf, 3);
+			//this is not cleared
 			Brush *brush = new Brush();
 			brush->copyFromOkcDataStorage(brushStorage);
+			//clear old brush inside setBrush function
 			okcVMR->setBrush(brush);
 		}
 	}
@@ -185,7 +187,9 @@ void OkcVisualMap::setBrush(OkcData* okcdata, OkcVisualMapResult* okcVMR) {
 		manager->getOkcDataModifier(XmdvTool::MODIFIER_HIGHLIGHT);
 
 	ColorManager *cm = g_globals.colorManager;
+
 	VisualAttribute* newAttr;
+
 	float index[okcdata->getDataSize()];
 	int selectedDim = getPipeline()->getPipelineManager()->getMainWnd()->getHandleTools()->
 	getColorStrategyManager()->getValueDim(getPipeline()->getPipelineID());
@@ -217,10 +221,12 @@ void OkcVisualMap::setBrush(OkcData* okcdata, OkcVisualMapResult* okcVMR) {
 			for (i=0; i<okcdata->getDataSize(); i++) {
 				if (modifierHighlight->getHighlight(manager->getOrigLine(i))) {
 					newAttr = new VisualAttribute(*inBrush);
+					//cleared inside setSingleDataVisAttr
 					newAttr->color = cm->getColor(ColorManager::BRUSH_SELECTED1, index[i]);
 					okcVMR->setSingleDataVisAttr(newAttr, i);
 				} else {
 					newAttr = new VisualAttribute(*outBrush);
+					//cleared inside setSingleDataVisAttr
 					newAttr->color = cm->getColor(ColorManager::BRUSH_UNSELECTED, index[i]);
 					okcVMR->setSingleDataVisAttr(newAttr, i);
 				}
@@ -228,6 +234,7 @@ void OkcVisualMap::setBrush(OkcData* okcdata, OkcVisualMapResult* okcVMR) {
 	} else {
 		for (i=0; i<okcdata->getDataSize(); i++) {
 			newAttr = new VisualAttribute(*outBrush);
+			//cleared inside setSingleDataVisAttr
 			newAttr->color = cm->getColor(ColorManager::BRUSH_UNSELECTED, index[i]);
 			okcVMR->setSingleDataVisAttr(newAttr, i);
 		}
@@ -264,6 +271,8 @@ void OkcVisualMap::setSBBColor(OkcData* okcdata, OkcVisualMapResult* okcVMR) {
 	int i;
 	for (i=0; i<okcdata->getDataSize(); i++) {
 		newAttr = new VisualAttribute();
+		//cleared inside setSingleDataVisAttr
+		
 		int origLine = mm->getOrigLine(i);
 		double color = cc[origLine];
 		if (ch[origLine]){
@@ -271,9 +280,9 @@ void OkcVisualMap::setSBBColor(OkcData* okcdata, OkcVisualMapResult* okcVMR) {
 		} else {
 			newAttr->color = cm->getColor(ColorManager::BRUSH_UNSELECTED, color);
 		}
-
 		// band color is independent from SBB
 		newAttr->bandColor = cm->getColor(ColorManager::BRUSH_UNSELECTED, color);
+
 		okcVMR->setSingleDataVisAttr(newAttr, i);
 	}
 }

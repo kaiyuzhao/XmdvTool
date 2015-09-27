@@ -113,5 +113,3 @@ public:
 
 
 #endif /* BRUSH_H_ */
-
-

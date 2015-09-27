@@ -26,14 +26,6 @@ public:
 	// the color for band
 	RGBt bandColor;
 	bool inBrush;
-	//int parcoordLineWidth;
-	//int scaterPlotSize;
-	//std::vector<int> glyphLineWidth;
-
-	//std::vector<RGBt> quaColor;
-	//std::vector<int> quaLineWidth;
-	//std::vector<int> quaBrightness;
-
 };
 
 

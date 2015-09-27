@@ -21,7 +21,7 @@
 class GLCanvas
 {
 public:
-	GLCanvas(QGLWidget *glWidget);
+	GLCanvas(QGLWidget *glWidget = 0);
 	virtual ~GLCanvas();
 
 public:

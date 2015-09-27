@@ -101,6 +101,7 @@ std::vector<int> OkcVisualMapResult::getDimCardinalityArr() {
 */
 
 void OkcVisualMapResult::setBrushOperator(BrushOperator* brushOperator) {
+	//no need to clear
 	this->m_brushOperator = brushOperator;
 }
 
@@ -109,6 +110,8 @@ BrushOperator* OkcVisualMapResult::getBrushOperator() {
 }
 
 void OkcVisualMapResult::setBrush(Brush* brush) {
+	// must free m_brush is not null;
+	SAFE_DELETE(m_brush);
 	m_brush = brush;
 }
 
@@ -128,6 +131,7 @@ void OkcVisualMapResult::initGlyphPlaceResult() {
 }
 
 void OkcVisualMapResult::setGlyphPlaceResult(GlyphPlaceResult* placeResult) {
+	// no need to clear
 	m_glyphPlaceResult = placeResult;
 }
 
@@ -136,6 +140,7 @@ void OkcVisualMapResult::initDiagVisAttr() {
 }
 
 void OkcVisualMapResult::setDiagVisAttr(DiagVisAttr* _diag_VisAttr) {
+	SAFE_DELETE(diag_VisAttr);
 	diag_VisAttr = _diag_VisAttr;
 }
 
@@ -160,11 +165,8 @@ ScatterVisAttr* OkcVisualMapResult::getScatterVisAttr() {
 }
 
 void OkcVisualMapResult::setScatterVisAttr(ScatterVisAttr* scatterVisAttr) {
+	SAFE_DELETE(m_scatterVisAttr);
 	m_scatterVisAttr = scatterVisAttr;
-}
-
-void OkcVisualMapResult::setDataVisAttr(std::vector<VisualAttribute*> data_VisAttr) {
-	this->data_VisAttr = data_VisAttr;
 }
 
 VisualAttribute* OkcVisualMapResult::getInBrushVisAttr() {
@@ -172,6 +174,7 @@ VisualAttribute* OkcVisualMapResult::getInBrushVisAttr() {
 }
 
 void OkcVisualMapResult::setInBrushVisAttr(VisualAttribute* inBrushVisAttr) {
+	SAFE_DELETE(this->inBrushVisAttr);
 	this->inBrushVisAttr = inBrushVisAttr;
 }
 
@@ -180,10 +183,12 @@ VisualAttribute* OkcVisualMapResult::getOutBrushVisAttr() {
 }
 
 void OkcVisualMapResult::setOutBrushVisAttr(VisualAttribute* outBrushVisAttr) {
+	SAFE_DELETE(this->outBrushVisAttr);
 	this->outBrushVisAttr = outBrushVisAttr;
 }
 
 void OkcVisualMapResult::setDiagMultiDimDataVisAttr(VisualAttribute* VisAttr, int dim, int pos) {
+	SAFE_DELETE(this->diag_VisAttr->multi_dim_data_VisAttr[dim][pos]);
 	this->diag_VisAttr->multi_dim_data_VisAttr[dim][pos] = VisAttr;
 }
 
@@ -192,6 +197,7 @@ VisualAttribute* OkcVisualMapResult::getDiagMultiDimDataVisAttr(int dim, int pos
 }
 
 void OkcVisualMapResult::setSingleDataVisAttr(VisualAttribute* VisAttr, int pos) {
+	SAFE_DELETE(this->data_VisAttr[pos]);
 	this->data_VisAttr[pos] = VisAttr;
 }
 

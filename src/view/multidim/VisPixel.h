@@ -13,11 +13,16 @@
 #ifndef VISPIXEL_H_
 #define VISPIXEL_H_
 
+#ifdef __APPLE__
+#include <GLUT/glut.h>
+#else
+#include <GL/glut.h>
+#endif
+
 #include <cstdlib>
 #include <sstream>
 #include <vector>
 using namespace std;
-#include <GL/glu.h>
 
 #include <vector>
 #include "datatype/Vec2.h"

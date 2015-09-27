@@ -1,6 +1,6 @@
 #include "data/multidim/OkcData.h"
 
-#include <QtGui/QMessageBox>
+#include <QMessageBox>
 #include <QFileInfo>
 #include <cstring>
 
@@ -56,6 +56,11 @@ void OkcData::copyFrom(const OkcData* okcData){
 		dim_min.resize(this->dims);
 		dim_max.resize(this->dims);
 		cardinality.resize(this->dims);
+
+		for (std::vector<char*>::iterator it = names.begin(); it != names.end(); ++it){
+			SAFE_DELETE(*it);
+		}
+		
 		names.resize(this->dims);
 
 		int i;
@@ -254,6 +259,10 @@ bool OkcData::readCSV(const char *fname){
 
 	// get the dimenison number
 	dims = csv_data.size();
+
+	for (std::vector<char*>::iterator it = names.begin(); it != names.end(); ++it){
+		SAFE_DELETE(*it);
+	}
 
 	names.resize(dims);
 
@@ -542,6 +551,9 @@ OkcData::ReadOkcResult OkcData::readOKC(const char *fname)
 	// Read in names of dimensions, and if necessary, nominal
 	// encodings of values.
 	//
+	for (std::vector<char*>::iterator it = names.begin(); it != names.end(); ++it){
+		SAFE_DELETE(*it);
+	}
 	names.resize(dims);
 
 	int i;
