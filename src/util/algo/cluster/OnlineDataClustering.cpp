@@ -105,7 +105,7 @@ list<OnlineDataClustering::ClusterNode*>::iterator OnlineDataClustering::WhoIsMa
     list<ClusterNode*>::iterator node1, who;
     int max, temp;
     if ( (node1 = data_link.begin()) == data_link.end() )
-        return list<OnlineDataClustering::ClusterNode*>::iterator (0);
+        return data_link.end();
 
     max = (*node1)->count;
     who = node1;
@@ -426,7 +426,7 @@ void OnlineDataClustering::Clustering(int n, list<ClusterNode*> & pointset, list
 	// PAUL: test
 	//std::cout << "****** Done with Pairings ("<< data_pairs.size() <<") ("<<checks<<" checks were made) ******" << std::endl;
 
-    while ( (center = WhoIsMaximum(pointset)) != list<OnlineDataClustering::ClusterNode*>::iterator (0)
+    while ( (center = WhoIsMaximum(pointset)) != pointset.end()
     		&& (*center)->count > 0 )
     {
 		// This is moved up so it can become the parent of (*center)
@@ -929,4 +929,3 @@ bool OnlineDataClustering::OnlineClusterOkcFileToCgFile(const char* okc_file_nam
 
      return true;
 }
-
