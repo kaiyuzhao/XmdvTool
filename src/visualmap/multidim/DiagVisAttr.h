@@ -40,6 +40,8 @@ public:
 
 	OkcVisualMapResult* getOkcVisualMapResult();
 
+private:
+	void clear();
 };
 
 #endif /* DIAGVISATTR_H_ */

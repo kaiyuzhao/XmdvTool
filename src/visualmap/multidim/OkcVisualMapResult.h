@@ -119,7 +119,6 @@ public:
 	Brush * getBrush();
 
 	std::vector<VisualAttribute*> getDataVisAttr();
-	void setDataVisAttr(std::vector<VisualAttribute*> data_VisAttr);
 	VisualAttribute* getInBrushVisAttr();
 	void setInBrushVisAttr(VisualAttribute* inBrushVisAttr);
 	VisualAttribute* getOutBrushVisAttr();

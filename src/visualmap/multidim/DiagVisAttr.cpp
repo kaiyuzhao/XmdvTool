@@ -22,9 +22,21 @@ DiagVisAttr::DiagVisAttr() {
 }
 
 DiagVisAttr::~DiagVisAttr() {
+	//clear the multi_dim_data_VisAttr
+}
+
+void DiagVisAttr::clear(){
+	for (std::vector<std::vector < VisualAttribute* > >::iterator it = multi_dim_data_VisAttr.begin();
+		it != multi_dim_data_VisAttr.end(); ++it){
+			for(std::vector < VisualAttribute* >::iterator iit = (*it).begin();
+		iit != (*it).end(); ++iit){
+			SAFE_DELETE(*iit);
+		}
+	}
 }
 
 void DiagVisAttr::setOkcData(OkcData* okcdata) {
+	SAFE_DELETE(m_okcData);
 	m_okcData = okcdata;
 }
 
@@ -33,6 +45,7 @@ OkcData* DiagVisAttr::getOkcData(){
 }
 
 void DiagVisAttr::setOkcVisualMapResult(OkcVisualMapResult* _okcVMR) {
+	SAFE_DELETE(okcVMR);
 	okcVMR = _okcVMR;
 }
 
@@ -47,9 +60,8 @@ void DiagVisAttr::diagColorMapping(){
 	int dataSize = input->getDataSize();
 	int dimSize = input->getOrigDimSize();
 
-
-
-	initVisAttrArray();
+	this->clear();
+	this->initVisAttrArray();
 
 	VisualAttribute* inBrush = okcVMR->getInBrushVisAttr();
 	VisualAttribute* outBrush = okcVMR->getOutBrushVisAttr();
@@ -77,11 +89,13 @@ void DiagVisAttr::diagColorMapping(){
 				for (int i = 0; i <dataSize; i++) {
 					if (modifierHighlight->getHighlight(manager->getOrigLine(i))) {
 						newAttr = new VisualAttribute(*inBrush);
+
 						newAttr->color = cm->getColor(
 								ColorManager::BRUSH_SELECTED1, index[i]);
 						okcVMR->setDiagMultiDimDataVisAttr(newAttr, dim, i);
 					} else {
 						newAttr = new VisualAttribute(*outBrush);
+
 						newAttr->color = cm->getColor(
 								ColorManager::BRUSH_UNSELECTED, index[i]);
 						okcVMR->setDiagMultiDimDataVisAttr(newAttr, dim, i);
@@ -103,6 +117,7 @@ void DiagVisAttr::initVisAttrArray(){
 	OkcData* input = getOkcData();
 	int dataSize = input->getDataSize();
 	int dimSize = input->getOrigDimSize();
+	//clear the double vector first and then create a new one;
 
 	multi_dim_data_VisAttr.resize(dimSize);
 	for (int i = 0; i < dimSize; i++) {

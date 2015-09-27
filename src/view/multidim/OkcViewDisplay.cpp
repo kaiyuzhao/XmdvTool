@@ -274,6 +274,7 @@ void OkcViewDisplay::drawSingleBrush(Brush*) {
 
 void OkcViewDisplay::refreshBrush() {
 	OkcVisualMapResult* okvVMR = getOkcVisualMapResult();
+	
 	Operator* brushQ = (Operator*)(okvVMR->getBrushOperator());
 	PipelineManager* pm = getPipelineManager();
 	Brush *brush = okvVMR->getBrush();
@@ -290,6 +291,7 @@ void OkcViewDisplay::refreshBrush() {
 	}
 
 	OkcData* brushStorage = brush->toOkcDataStorage();
+
 	std::vector<double> buf;
 	brushStorage->getData(buf, 3);
 	int pID = getPipelineID();
@@ -297,6 +299,7 @@ void OkcViewDisplay::refreshBrush() {
 	pm->updateAssisInput(pID, brushStorage, XmdvTool::ASSISDATA_BRUSH);
 
 	delete brushStorage;
+
 	pm->assemble(pID, brushQ);
 	getViewManager()->refreshDisplayByPID(pID);
 }
