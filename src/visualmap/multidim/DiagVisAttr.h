@@ -39,7 +39,8 @@ public:
 	void setOkcVisualMapResult(OkcVisualMapResult* _okcVMR) ;
 
 	OkcVisualMapResult* getOkcVisualMapResult();
-
+private:
+	void clear();
 };
 
 #endif /* DIAGVISATTR_H_ */

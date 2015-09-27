@@ -30,15 +30,19 @@
 #include "visualmap/multidim/DiagVisAttr.h"
 #include "visualmap/multidim/ScatterVisAttr.h"
 
+#include <vector>
 
 #include <typeinfo>
 using namespace std;
 
-OkcVisualMap::OkcVisualMap() {
-	m_brushOperator = 0;
+OkcVisualMap::OkcVisualMap(){
+	this->m_brushOperator = 0;
+	m_visualMapResult = 0;
+	m_okcVmr = std::vector<OkcVisualMapResult*>();
 }
 
 OkcVisualMap::~OkcVisualMap() {
+	this->clear();
 }
 
 void OkcVisualMap::setInput(Data* input) {
@@ -88,7 +92,10 @@ void OkcVisualMap::doVisualMap() {
 
 	OkcVisualMapResult* okcVMR = dynamic_cast<OkcVisualMapResult*>(m_visualMapResult);
 
+	m_okcVmr.push_back(okcVMR);
+
 	Pipeline* pl = getPipeline();
+
 	XmdvTool::PLTYPE plType = pl->getPipelineType();
 
 	switch (plType) {
@@ -99,7 +106,7 @@ void OkcVisualMap::doVisualMap() {
 		//	{
 		// Set highlighting and brush boundary
 		okcVMR->setSBBResult(FALSE);
-		setBrush(okcdata, okcVMR);
+		setBrush(okcdata, okcVMR); //okcvm
 
 		// Set cardinality for the visual map result
 		setCardinality(okcVMR);
@@ -210,6 +217,9 @@ void OkcVisualMap::setBrush(OkcData* okcdata, OkcVisualMapResult* okcVMR) {
 	}
 
 	// Set the VisualAttribute and color for each record
+	//clear all attr from okcVMR
+	okcVMR->clearDataVisAttr();
+
 	if (modifier) {
 		// this okcdata has the highlight modifier
 		OkcDataModifierHighlight* modifierHighlight =
@@ -262,6 +272,7 @@ void OkcVisualMap::setSBBColor(OkcData* okcdata, OkcVisualMapResult* okcVMR) {
 	std::vector<bool>& ch = modifierCH->getHighlightArr();
 
 	int i;
+	//this->clear();
 	for (i=0; i<okcdata->getDataSize(); i++) {
 		newAttr = new VisualAttribute();
 		int origLine = mm->getOrigLine(i);
@@ -284,4 +295,12 @@ void OkcVisualMap::placeGlyph(OkcData* okcdata, OkcVisualMapResult* okcVMR)
 	m_glyphPlace->setOkcData(okcdata);
 	m_glyphPlace->placeGlyph();
 	okcVMR->setGlyphPlaceResult(m_glyphPlace->getPlaceResult());
+}
+
+void OkcVisualMap::clear(){
+	for(std::vector<OkcVisualMapResult*>::iterator it=m_okcVmr.begin();
+		it!= m_okcVmr.end(); ++it){
+		SAFE_DELETE(*it);
+	}
+	m_okcVmr.clear();
 }

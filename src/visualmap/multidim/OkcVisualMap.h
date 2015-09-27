@@ -83,7 +83,9 @@ private:
 	// for scatterplot diagonal plot two dimension disp
 	void setDiagPlotColor(OkcData* okcdata, OkcVisualMapResult* okcVMR);
 
-
+private:
+	std::vector<OkcVisualMapResult*> m_okcVmr;
+	void clear();
 };
 
 #endif /* OKCVISUALMAP_H_ */

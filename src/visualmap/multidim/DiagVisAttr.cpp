@@ -22,6 +22,17 @@ DiagVisAttr::DiagVisAttr() {
 }
 
 DiagVisAttr::~DiagVisAttr() {
+	this->clear();
+}
+
+void DiagVisAttr::clear(){
+	for (std::vector<std::vector < VisualAttribute* > >::iterator it = multi_dim_data_VisAttr.begin();
+		it != multi_dim_data_VisAttr.end(); ++it){
+			for(std::vector < VisualAttribute* >::iterator iit = (*it).begin();
+				iit != (*it).end(); ++iit){
+			SAFE_DELETE(*iit);
+		}
+	}
 }
 
 void DiagVisAttr::setOkcData(OkcData* okcdata) {
@@ -47,9 +58,8 @@ void DiagVisAttr::diagColorMapping(){
 	int dataSize = input->getDataSize();
 	int dimSize = input->getOrigDimSize();
 
-
-
-	initVisAttrArray();
+	this->clear();
+	this->initVisAttrArray();
 
 	VisualAttribute* inBrush = okcVMR->getInBrushVisAttr();
 	VisualAttribute* outBrush = okcVMR->getOutBrushVisAttr();
@@ -103,7 +113,7 @@ void DiagVisAttr::initVisAttrArray(){
 	OkcData* input = getOkcData();
 	int dataSize = input->getDataSize();
 	int dimSize = input->getOrigDimSize();
-
+	this->clear();
 	multi_dim_data_VisAttr.resize(dimSize);
 	for (int i = 0; i < dimSize; i++) {
 		multi_dim_data_VisAttr[i].resize(dataSize);

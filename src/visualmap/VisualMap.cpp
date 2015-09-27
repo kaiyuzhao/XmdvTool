@@ -5,7 +5,7 @@
 #include <vector>
 using namespace std;
 
-VisualMap::VisualMap() {
+VisualMap::VisualMap(){
 	this->m_input = 0;
 	this->m_visualMapResult = 0;
 }
@@ -15,8 +15,8 @@ VisualMap::VisualMap(Data* input) {
 	this->m_visualMapResult = 0;
 }
 
-VisualMap::~VisualMap() {
 
+VisualMap::~VisualMap() {
 };
 
 void VisualMap::setPipeline(Pipeline* pipeline) {
@@ -82,30 +82,3 @@ void VisualMap::doVisualMap() {
 VisualMapResult* VisualMap::getVisualMapResult() {
 	return this->m_visualMapResult;
 }
-
-/*
-
-void VisualMap::visualMapBasedOnBrush() {
-
-	int dataSize = dataMapResult->getDataset()->data_size;
-	int dimSize = dataMapResult->getDataset()->all_dims;
-	ARR <double> curData(dimSize);
-	//ARR <VisualAttribute*> allDataVisAttr = visualMapResult->getAllDataVisAttr();
-
-	//VisualAttribute *tBrushVisAttr;
-	for (int i=0; i<dataSize; i++){
-		dataMapResult->getDisplayDataset()->GetAllData(curData,i);
-		visualMapResult->setSingleDataVisAttr(visualMapResult->getInBrushVisAttr(), i);
-		for (int j=0; j<dimSize; j++){
-			if (curData[j]>visualMapResult->getBrush()->max[j]||curData[j]<visualMapResult->getBrush()->min[j]){
-				visualMapResult->setSingleDataVisAttr(visualMapResult->getOutBrushVisAttr(), i);
-				break;
-			}
-
-		}
-		//tBrushVisAttr = all_data_VisAttr[i];
-	}
-	//visualMapResult->getBrush()->MapVisualBrush();
-
-}
-*/
