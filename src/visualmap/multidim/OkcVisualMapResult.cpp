@@ -34,21 +34,25 @@ OkcVisualMapResult::OkcVisualMapResult() :
 
 OkcVisualMapResult::OkcVisualMapResult(Data* input) :
 	VisualMapResult(input) {
-	assert ( typeid(*input) == typeid(OkcData) );
-	OkcData* okcdata = dynamic_cast<OkcData*>(input);
-	int dataSize = okcdata->getDataSize();
-	if (dataSize>0) {
-			this->data_VisAttr.resize(dataSize);
-	}
-	initBrush();
-	initHierParameters();
-	m_scatterVisAttr = 0;
+		m_scatterVisAttr = 0;
+		diag_VisAttr = 0;
+		inBrushVisAttr = 0;
+		outBrushVisAttr = 0;
+		assert ( typeid(*input) == typeid(OkcData) );
+		OkcData* okcdata = dynamic_cast<OkcData*>(input);
+		int dataSize = okcdata->getDataSize();
+		if (dataSize>0) {
+				this->data_VisAttr.resize(dataSize);
+		}
+		initBrush();
+		initHierParameters();
+		m_scatterVisAttr = 0;
 }
 
 OkcVisualMapResult::~OkcVisualMapResult() {
 	SAFE_DELETE(m_brush);
-	//SAFE_DELETE(inBrushVisAttr);
-	//SAFE_DELETE(outBrushVisAttr);
+	SAFE_DELETE(inBrushVisAttr);
+	SAFE_DELETE(outBrushVisAttr);
 	clearDataVisAttr();
 }
 
@@ -127,10 +131,10 @@ void OkcVisualMapResult::initBrush() {
 	this->m_brushOperator = 0;
 	this->m_brush = 0;
 
-	//SAFE_DELETE(inBrushVisAttr);
+	SAFE_DELETE(inBrushVisAttr);
 	this->inBrushVisAttr = new VisualAttribute(true);
 
-	//SAFE_DELETE(outBrushVisAttr);
+	SAFE_DELETE(outBrushVisAttr);
 	this->outBrushVisAttr = new VisualAttribute(false);
 }
 
