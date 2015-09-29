@@ -22,7 +22,6 @@ class ViewManager;
 class GLDisplay;
 class GLCanvas;
 class VisualMapResult;
-class Brush;
 class ViewWindow;
 class MouseKeyboardStatus;
 

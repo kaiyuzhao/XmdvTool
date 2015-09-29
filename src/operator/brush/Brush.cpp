@@ -111,19 +111,7 @@ void Brush::SetMinMax(int d,double lo,double hi)
 {
 	SetPosSize(d, (hi + lo)*.5, (hi - lo));
 }
-/*
-void Brush::SetFromTo(int d, int from, int to)
-{
-    order_from = from;
-    order_to = to;
-}
 
-void Brush::SetFromToX(int d, int from, int to)
-{
-    x_from = from;
-    x_to = to;
-}
-*/
 double Brush::RampMin(int d)
 {
     return Min(d) - bound_offset[d];

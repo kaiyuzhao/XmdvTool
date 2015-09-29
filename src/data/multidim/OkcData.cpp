@@ -806,22 +806,7 @@ void OkcData::getOrigDimNameArr(std::vector<char*> &buf) {
 void OkcData::getCardinality(std::vector<int> &buf) {
 	m_okcDataModifierManager->mapData(cardinality, buf);
 }
-/*
-double OkcData::getComDist(int line) {
-	int origLine = m_okcDataModifierManager->getOrigLine(line);
-	return m_okcDataModifierManager->getComDist(origLine);
-}
 
-double OkcData::getComDistMin() {
-	return m_okcDataModifierManager->getComDistMin();
-}
-double OkcData::getComDistMax() {
-	return m_okcDataModifierManager->getComDistMax();
-}
-double OkcData::getComDistBrushLevel() {
-	return m_okcDataModifierManager->getComDistBrushLevel();
-}
-*/
 OkcDataModifierManager* OkcData::getOkcDataModifierManager() {
 	return m_okcDataModifierManager;
 }
