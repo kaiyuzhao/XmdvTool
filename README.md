@@ -37,6 +37,8 @@ Please visite our website: http://davis.wpi.edu/xmdv/
 
 ### How to compile
 
+Qt 5.5 breaks back compatibility to Qt 4.x. Qt 5.5 migrates a bunch of header files from QtGui to QtWidgets. I have not yet found a stable solution to support both versions. Now this project only compiles with Qt 5.5+ utill a newer version breaks the back compatibility again.
+
 #### Mac
 1. Open terminal and cd to the directory where you downloaded the source code of xmdv. run ```ls``` to make sure you see XmdvTool.pro file
 
