@@ -47,16 +47,16 @@ Please visite our website: http://davis.wpi.edu/xmdv/
 3. Create a make file 'Makefile'
   
   ```
-  qmake -r -config release XmdvTool.pro
+  qmake -r -config debug_and_release XmdvTool.pro
   ```
 4. Compile
   
   ```
-  make -j4
+  make -f Makefile.Release -j4
   ```
 5. Find XmdvTool App and run, you may copy it to your Application folder if you want.
 
-If you want to use debug, in step 3 replace "release" with "debug"
+If you want to use debug, in step 4 replace "Release" with "Debug"
 
 #### Windows
 
