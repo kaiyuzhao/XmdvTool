@@ -20,7 +20,7 @@
 #ifndef SBBCONTROL_H_
 #define SBBCONTROL_H_
 
-#include <QtGui/QDialog>
+#include <QtWidgets/QDialog>
 #include <QVBoxLayout>
 #include <QHBoxLayout>
 #include <QScrollArea>

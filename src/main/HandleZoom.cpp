@@ -12,7 +12,7 @@
 #include "XmdvTool.h"
 #include "view/auxiliary/ZoomLineEdit.h"
 
-#include <QtGui/QComboBox>
+#include <QtWidgets/QComboBox>
 
 HandleZoom::HandleZoom(XmdvToolMainWnd *mainWnd) {
 	this->mainWnd = mainWnd;

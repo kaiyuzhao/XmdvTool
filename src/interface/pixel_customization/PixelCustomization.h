@@ -10,17 +10,17 @@
 #ifndef PIXELCUSTOMIZATION_H_
 #define PIXELCUSTOMIZATION_H_
 
-#include <QtGui/QDialog>
-#include <QtGui/QComboBox>
-#include <QtGui/QRadioButton>
-#include <QtGui/QSlider>
-#include <QtGui/QLabel>
-#include <QtGui/QPushButton>
-#include <QtGui/QLineEdit>
-#include <QtGui/QScrollArea>
-#include <QtGui/QWidget>
-#include <QtGui/QFormLayout>
-#include <QtGui/QCheckBox>
+#include <QtWidgets/QDialog>
+#include <QtWidgets/QComboBox>
+#include <QtWidgets/QRadioButton>
+#include <QtWidgets/QSlider>
+#include <QtWidgets/QLabel>
+#include <QtWidgets/QPushButton>
+#include <QtWidgets/QLineEdit>
+#include <QtWidgets/QScrollArea>
+#include <QtWidgets/QWidget>
+#include <QtWidgets/QFormLayout>
+#include <QtWidgets/QCheckBox>
 
 #include <QMdiSubWindow>
 

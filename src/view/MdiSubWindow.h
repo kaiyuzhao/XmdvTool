@@ -8,8 +8,8 @@
 #ifndef MDISUBWINDOW_H_
 #define MDISUBWINDOW_H_
 
-#include <QtGui/QWidget>
-#include <QtGui/QMdiSubWindow>
+#include <QtWidgets/QWidget>
+#include <QtWidgets/QMdiSubWindow>
 #include <QtOpenGL/QGLWidget>
 #include <QScrollArea>
 #include <view/GLDisplay.h>

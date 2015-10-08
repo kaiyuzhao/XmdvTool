@@ -49,7 +49,7 @@
  #ifndef FINDFILEDIALOG_H
  #define FINDFILEDIALOG_H
 
- #include <QtGui/QDialog>
+ #include <QtWidgets/QDialog>
 
  class QComboBox;
  class QDialogButtonBox;

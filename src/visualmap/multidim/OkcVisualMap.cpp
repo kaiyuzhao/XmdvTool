@@ -104,7 +104,7 @@ void OkcVisualMap::doVisualMap() {
 	case XmdvTool::PLTYPE_DIMR :
 		//	{
 		// Set highlighting and brush boundary
-		okcVMR->setSBBResult(FALSE);
+		okcVMR->setSBBResult(false);
 		setBrush(okcdata, okcVMR); //okcvm
 
 		// Set cardinality for the visual map result
@@ -144,7 +144,7 @@ void OkcVisualMap::doVisualMap() {
 		}
 
 		SBBPipeline* sbbPL = dynamic_cast<SBBPipeline*>(pl);
-		okcVMR->setSBBResult(TRUE);
+		okcVMR->setSBBResult(true);
 		okcVMR->setHierInfo(sbbPL->getHierInfo());
 		setSBBColor(okcdata, okcVMR);
 	}

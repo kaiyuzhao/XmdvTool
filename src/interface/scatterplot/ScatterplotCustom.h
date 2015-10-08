@@ -29,23 +29,23 @@
 #include <QComboBox>
 #include <QGroupBox>
 
-#include <QtGui/QDialog>
+#include <QtWidgets/QDialog>
 
 #include <QtCore/QVariant>
-#include <QtGui/QAction>
-#include <QtGui/QApplication>
-#include <QtGui/QButtonGroup>
-#include <QtGui/QDialog>
-#include <QtGui/QHeaderView>
-#include <QtGui/QLabel>
-#include <QtGui/QLineEdit>
-#include <QtGui/QPushButton>
-#include <QtGui/QScrollArea>
-#include <QtGui/QWidget>
-#include <QtGui/QFormLayout>
-#include <QtGui/QGridLayout>
-#include <QtGui/QFrame>
-#include <QtGui/QVBoxLayout>
+#include <QtWidgets/QAction>
+#include <QtWidgets/QApplication>
+#include <QtWidgets/QButtonGroup>
+#include <QtWidgets/QDialog>
+#include <QtWidgets/QHeaderView>
+#include <QtWidgets/QLabel>
+#include <QtWidgets/QLineEdit>
+#include <QtWidgets/QPushButton>
+#include <QtWidgets/QScrollArea>
+#include <QtWidgets/QWidget>
+#include <QtWidgets/QFormLayout>
+#include <QtWidgets/QGridLayout>
+#include <QtWidgets/QFrame>
+#include <QtWidgets/QVBoxLayout>
 #include <QMdiSubWindow>
 
 

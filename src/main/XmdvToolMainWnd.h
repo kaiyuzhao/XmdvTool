@@ -18,18 +18,18 @@
 #define XMDVTOOLMAINWND_H
 
 #include <QtCore/QVariant>
-#include <QtGui/QScrollArea>
-#include <QtGui/QAction>
-#include <QtGui/QApplication>
-#include <QtGui/QButtonGroup>
-#include <QtGui/QMainWindow>
-#include <QtGui/QMenu>
-#include <QtGui/QMenuBar>
-#include <QtGui/QStatusBar>
-#include <QtGui/QToolBar>
-#include <QtGui/QMdiArea>
-#include <QtGui/QLabel>
-#include <QtGui/QLineEdit>
+#include <QtWidgets/QScrollArea>
+#include <QtWidgets/QAction>
+#include <QtWidgets/QApplication>
+#include <QtWidgets/QButtonGroup>
+#include <QtWidgets/QMainWindow>
+#include <QtWidgets/QMenu>
+#include <QtWidgets/QMenuBar>
+#include <QtWidgets/QStatusBar>
+#include <QtWidgets/QToolBar>
+#include <QtWidgets/QMdiArea>
+#include <QtWidgets/QLabel>
+#include <QtWidgets/QLineEdit>
 #include <QComboBox>
 
 #include "main/XmdvTool.h"

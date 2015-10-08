@@ -7,8 +7,8 @@
 
 #include "ScatterplotCustomManager.h"
 
-#include <QtGui/QMdiArea>
-#include <QtGui/QMdiSubWindow>
+#include <QtWidgets/QMdiArea>
+#include <QtWidgets/QMdiSubWindow>
 
 #include "view/ViewManager.h"
 #include "view/ViewWindow.h"

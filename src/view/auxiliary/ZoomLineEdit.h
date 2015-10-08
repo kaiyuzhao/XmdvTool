@@ -8,7 +8,7 @@
 #ifndef ZOOMLINEEDIT_H_
 #define ZOOMLINEEDIT_H_
 
-#include <QtGui/QLineEdit>
+#include <QtWidgets/QLineEdit>
 #include "main/XmdvToolMainWnd.h"
 
 class ZoomLineEdit : public QLineEdit{

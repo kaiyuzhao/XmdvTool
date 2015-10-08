@@ -15,7 +15,7 @@
 #ifndef GLDISPLAY_H_
 #define GLDISPLAY_H_
 
-#include <QtGui/QWidget>
+#include <QtWidgets/QWidget>
 #include <QtOpenGL/QGLWidget>
 
 #include "main/XmdvToolMainWnd.h"

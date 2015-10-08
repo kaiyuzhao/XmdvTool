@@ -25,7 +25,7 @@
 #include "help/FindFileDialog.h"
 
 #include <QGLWidget>
-#include <QtGui>
+#include <QtWidgets>
 #include <QtOpenGL>
 #include <QDir>
 #include <QString>

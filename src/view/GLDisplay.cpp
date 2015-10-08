@@ -18,7 +18,7 @@
 #include "datatype/RGBt.h"
 
 #include <QGLWidget>
-#include <QtGui>
+#include <QtWidgets>
 #include <QtOpenGL>
 #include <QPalette>
 #include <QMessageBox>

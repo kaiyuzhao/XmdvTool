@@ -91,7 +91,7 @@ bool ClusterOperator::doOperator() {
 	// By default, the cg file contains the clustering result.
 	// It has the same location and base name as the okc file
 	// but with suffic "cg".
-	strcpy(cgfilename, dataFilePath.toAscii() );
+	strcpy(cgfilename, dataFilePath.toLatin1() );
 	int len = strlen(cgfilename);
 	strcpy(&cgfilename[len-4],".cg");
 	setCgFileName(cgfilename);

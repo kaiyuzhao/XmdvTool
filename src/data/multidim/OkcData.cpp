@@ -1,6 +1,6 @@
 #include "data/multidim/OkcData.h"
 
-#include <QtGui/QMessageBox>
+ #include <QtWidgets/QMessageBox>
 #include <QFileInfo>
 #include <cstring>
 

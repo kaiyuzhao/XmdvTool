@@ -50,7 +50,7 @@
  #define TEXTEDIT_H
 
  #include <QtCore/QUrl>
- #include <QtGui/QTextEdit>
+ #include <QtWidgets/QTextEdit>
 
  class TextEdit : public QTextEdit
  {

@@ -3,7 +3,7 @@
 #include <string>
 using namespace std;
 
-#include <QtGui/QMessageBox>
+ #include <QtWidgets/QMessageBox>
 #include <QFileInfo>
 #include <new>
 #include <cstdlib>

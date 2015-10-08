@@ -16,7 +16,7 @@
 #ifndef DIMREDUCTCONTROL_H_
 #define DIMREDUCTCONTROL_H_
 
-#include <QtGui/QDialog>
+#include <QtWidgets/QDialog>
 #include <QPushButton>
 #include <QHBoxLayout>
 #include <QVBoxLayout>

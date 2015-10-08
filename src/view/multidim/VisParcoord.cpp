@@ -28,7 +28,7 @@
 
 #include "main/XmdvTool.h"
 
-#include <QtGui>
+#include <QtWidgets>
 #include <QtOpenGL>
 #include <QPalette>
 

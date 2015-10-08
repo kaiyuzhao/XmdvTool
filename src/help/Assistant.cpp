@@ -53,7 +53,7 @@
  #include <QtCore/QLibraryInfo>
  #include <QtCore/QProcess>
 
- #include <QtGui/QMessageBox>
+ #include <QtWidgets/QMessageBox>
 
  #include "help/Assistant.h"
  #include "main/XmdvToolMainWnd.h"

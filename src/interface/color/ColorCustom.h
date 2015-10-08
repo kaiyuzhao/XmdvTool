@@ -15,8 +15,8 @@
 #ifndef COLORCUSTOM_H_
 #define COLORCUSTOM_H_
 
-#include <QtGui/QDialog>
-#include <QtGui/QPushButton>
+#include <QtWidgets/QDialog>
+#include <QtWidgets/QPushButton>
 #include <QSignalMapper>
 #include <QComboBox>
 #include <QLabel>

@@ -10,10 +10,10 @@
 #include <typeinfo>
 #include <assert.h>
 
-#include <QtGui/QGridLayout>
-#include <QtGui/QButtonGroup>
-#include <QtGui/QVBoxLayout>
-#include <QtGui/QHBoxLayout>
+#include <QtWidgets/QGridLayout>
+#include <QtWidgets/QButtonGroup>
+#include <QtWidgets/QVBoxLayout>
+#include <QtWidgets/QHBoxLayout>
 
 #include "main/XmdvToolMainWnd.h"
 #include "data/multidim/OkcData.h"
