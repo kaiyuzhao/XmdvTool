@@ -43,7 +43,7 @@ Please visite our website: http://davis.wpi.edu/xmdv/
 2. If you are using xcode, the command below generate a xcode project file. For users not using xcode, skip step 2.
 ***qmake -spec macx-xcode XmdvTool.pro***
 3. Create a make file 'Makefile.Release'
-***qmake -r CONFIG+=release XmdvTool.pro***
+***qmake -r CONFIG+=debug_and_release XmdvTool.pro***
 4. Compile
 ***make -f Makefile.Release -j4***
 5. Find XmdvTool App and run, you may copy it to your Application folder if you want.
