@@ -66,8 +66,8 @@ You may not want to do this.
 
 1. In case you want, you need to install MinGW on your windows machine;
 2. Config the toolchain in Qt Creator and make sure the compiler is using MinGW
-3. If unfortunately you Qt library and MinGW are not compiled using the same version of g++, you will get very wired linker error. To work around, you need to recompile your whole qt library using the same version of g++ you want to use for compiling XmdvTool. If you have any weird errors, leave a comment here.
-4. If you are lucky/a very advanced windows user, you should be fine
+3. If unfortunately you Qt library and MinGW are not compiled using the same version of g++, you will get very wired linker error. To work around, you need to recompile your whole qt library using the same version of g++ you want to use for compiling XmdvTool. If you have any other weird errors, leave a comment here.
+
 
 #### Linux
 Should be similar to mac
