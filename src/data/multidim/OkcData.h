@@ -51,8 +51,8 @@ public:
 	~OkcData();
 
 private:
-	static const char * read_till(FILE *fp,
-			const char *delimiters,char *which_delimiter);
+	char * read_till(FILE *fp,
+			char *delimiters, char *which_delimiter);
 
 public:
 	// copy all of data from another OkcData structure.

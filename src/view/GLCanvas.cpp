@@ -21,6 +21,8 @@
 #include <GL/glut.h>
 #endif
 
+#include <stdio.h>	// for printf()
+
 #define SLICES 2
 #define SLICES2 1
 GLCanvas::GLCanvas(QGLWidget *glWidget) : zoom(1.0,1.0)

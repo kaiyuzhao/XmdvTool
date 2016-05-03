@@ -23,6 +23,8 @@
 #include "interface/sbb/SBBControl.h"
 #include "interface/sbb/HierNavDisplay.h"
 
+#include <stdio.h>	// for sprintf()
+
 HierNav::HierNav(XmdvToolMainWnd* mainWnd, SBBControl *sbbControl) {
 	m_mainWnd = mainWnd;
 	m_sbbControl = sbbControl;
