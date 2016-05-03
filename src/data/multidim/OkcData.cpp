@@ -116,8 +116,8 @@ void OkcData::setBaseFlag(bool baseFlag) {
 	m_isBaseOkcData = baseFlag;
 }
 
-const char * OkcData::read_till(FILE *fp,
-		const char *delimiters = "\n",
+char * OkcData::read_till(FILE *fp,
+		char *delimiters,
 		char *which_delimiter = 0)
 {
 	static char str[500];
@@ -548,12 +548,13 @@ OkcData::ReadOkcResult OkcData::readOKC(const char *fname)
 	for (i = 0; i < dims; i++)
 	{
 		char endchar;
-		const char *dname = read_till(fp, "(\n", &endchar);
+		char pattern[] = "(\n";
+		const char *dname = read_till(fp, pattern, &endchar);
 		names[i] = new char[strlen(dname) + 4];
 		strcpy(names[i], dname);
 
 		if (endchar == '(') {
-			read_till(fp, "\n");
+			read_till(fp, (char *)"\n");
 		}
 	}
 

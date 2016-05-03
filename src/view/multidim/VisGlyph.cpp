@@ -18,6 +18,7 @@
 #include "operator/sbb/HierDisplayInformation.h"
 #include "view/GLDisplay.h"
 #include <cmath>
+#include <stdio.h>      // for sprintf()
 
 
 VisGlyph::VisGlyph(ViewWindow* viewWindow, PipelineManager* pm, int pipelineID, ViewManager* vm)
