@@ -1,3 +1,5 @@
+LIBS += -lGLU
+QMAKE_CXXFLAGS += -fpermissive
 TEMPLATE = app
 TARGET = XmdvTool
 QT += core \
