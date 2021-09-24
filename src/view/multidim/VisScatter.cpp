@@ -31,6 +31,7 @@
 
 #include <typeinfo>
 #include <assert.h>
+#include <stdio.h>      // for sprintf()
 
 VisScatter::VisScatter(ViewWindow* viewWindow, PipelineManager* pm, int pipelineID, ViewManager* vm)
 : OkcViewDisplay(viewWindow, pm, pipelineID, vm) {

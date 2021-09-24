@@ -25,6 +25,8 @@
 #include "interaction/MouseKeyboardStatus.h"
 #include "color/ColorManager.h"
 
+#include <stdio.h>      // for sprintf()
+
 
 VisDimstack::VisDimstack(ViewWindow* viewWindow, PipelineManager* pm, int pipelineID, ViewManager* vm)
 : OkcViewDisplay(viewWindow, pm, pipelineID, vm) {

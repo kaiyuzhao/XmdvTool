@@ -291,6 +291,7 @@ SOURCES += src/color/ColorManager.cpp \
 FORMS += src/interface/glyph/glyphcustom.ui
 RESOURCES += resource/XmdvTool.qrc
 INCLUDEPATH += src
+LIBS+=-lGLU
 
 Release:DESTDIR = release
 Release:OBJECTS_DIR = release/.obj
